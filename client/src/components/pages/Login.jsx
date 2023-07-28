@@ -14,7 +14,7 @@ const Login = () => {
   return (
     <div>
       <Navbar />
-      <Box sx={{ marginTop: 20 }}>
+      <Box>
         <MediaControlCard />
       </Box>
     </div>
@@ -26,38 +26,33 @@ export default Login;
 function MediaControlCard() {
   const [toggle, setToggle] = useState(false);
 
-  const theme = useTheme();
-
   return (
-    <Card
-      sx={{
-        display: "flex",
+    <Grid>
+    {/* grid grid-cols-1 */}
+      <div className="lg:w-[80%] grid h-screen place-items-center m-auto">
+        <div className="  card card-side bg-base-100 shadow-xl  md:flex sm: grid grid-cols-1 ">
+          <div className=" sm:w-[70%]  ">
+            {toggle === true ? (
+              <figure>
+                <img
+                  src="https://img.etimg.com/thumb/msid-78829592,width-1070,height-580,imgsize-36654,overlay-etwealthmutualfunds/photo.jpg"
+                  alt="Movie"
+                />
+              </figure>
+            ) : (
+              <figure>
+                <img
+                width="80%"
+                  src="https://www.claimsjournal.com/app/uploads/2022/01/bigstock-fraud.detection-scaled.jpg"
+                  alt="Movie"
+                />
+              </figure>
+            )}
+          </div>
 
-        width: "80%",
-        height: "500px",
-        m: "auto",
-      }}
-    >
-      {toggle === true ? (
-        <CardMedia
-          component="img"
-          sx={{ width: 800 }}
-          image="https://img.etimg.com/thumb/msid-78829592,width-1070,height-580,imgsize-36654,overlay-etwealthmutualfunds/photo.jpg"
-          alt="Live from space album cover"
-        />
-      ) : (
-        <CardMedia
-          component="img"
-          sx={{ width: 800 }}
-          image="https://www.claimsjournal.com/app/uploads/2022/01/bigstock-fraud.detection-scaled.jpg"
-          alt="Live from space album cover"
-        />
-      )}
-
-      {/* sx={{ display: "flex", flexDirection: "column" }} */}
-      <Box sx={{ width: "100%" }}>
-        {toggle === true ? (
-          <CardContent sx={{ flex: "1 0 auto", mt: 4 }}>
+          <div className="card-body">
+          {toggle === true ? (
+          <div className="">
             <Typography component="div" variant="h5" align="center">
               Sign-Up
             </Typography>
@@ -79,7 +74,7 @@ function MediaControlCard() {
                 Submit
               </Button>
             </Grid>
-            <Grid sx={{ mt: 1 }}>
+            <Grid >
               <Typography align="center">
                 already have account Sign In
                 <Button
@@ -90,9 +85,9 @@ function MediaControlCard() {
                 </Button>
               </Typography>
             </Grid>
-          </CardContent>
+          </div>
         ) : (
-          <CardContent sx={{ flex: "1 0 auto", mt: 4 }}>
+          <div >
             <Typography component="div" variant="h5" align="center">
               Sign-In
             </Typography>
@@ -119,9 +114,11 @@ function MediaControlCard() {
                 </Button>
               </Typography>
             </Grid>
-          </CardContent>
+          </div>
         )}
-      </Box>
-    </Card>
+          </div>
+        </div>
+      </div>
+    </Grid>
   );
 }

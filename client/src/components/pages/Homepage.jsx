@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Login";
+// import Navbar from "./Login";    
 import SNavbar from "./Navbar";
 import { Box, Toolbar, Typography } from "@mui/material";
 
@@ -8,7 +8,7 @@ const Homepage = () => {
     <div>
       <SNavbar />
       
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 2}}>
         <Toolbar />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
